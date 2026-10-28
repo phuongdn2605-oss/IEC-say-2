@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IEC Hanoi Booklet</title>
+<meta property="og:title" content="IEC Hanoi Booklet">
+<meta property="og:description" content="RMIT Innovation &amp; Entrepreneurship Club Hanoi: who we are, our journey and the Gen 4 executive board.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/iec-logo.png">
+<meta name="description" content="RMIT Innovation & Entrepreneurship Club Hanoi: who we are, our journey and the Gen 4 executive board.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: a booklet read as one long page — navy chapters for the club's voice, ivory leaves for long reading, gold as the binding thread. Single deliberate look (no dark/light switch). */
+:root {
+  --navy: #232A4C;
+  --navy-deep: #1A2040;
+  --navy-raised: #2A3260;
+  --navy-panel: #343D70;
+  --gold: #FFBD3D;
+  --gold-line: rgba(255, 189, 61, 0.35);
+  --gold-faint: rgba(255, 189, 61, 0.22);
+  --gold-wash: rgba(255, 189, 61, 0.08);
+  --gold-ink: #8A6418;
+  --gold-frame: #B8892E;
+  --ivory: #F6F1E6;
+  --ivory-rule: #D8CCAE;
+  --ink: #1B2142;
+  --ink-body: #2A3050;
+  --ink-soft: #3A3F5C;
+  --ink-muted: #5A5F78;
+  --on-navy: #ECE8DE;
+  --on-navy-strong: #F6F1E6;
+  --on-navy-body: #D5D3CF;
+  --on-navy-muted: #B9BCCC;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --gutter-l: max(clamp(16px, 4vw, 48px), env(safe-area-inset-left, 0px));
+  --gutter-r: max(clamp(16px, 4vw, 48px), env(safe-area-inset-right, 0px));
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--navy); color: var(--on-navy); font-family: var(--font-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--navy); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; margin: 0; text-wrap: balance; }
+p, ul, dl, dd, figure { margin: 0; }
+a { color: inherit; text-decoration-color: var(--gold-line); text-underline-offset: 4px; }
+a:hover { color: var(--gold); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.wrap { max-width: 1296px; margin-inline: auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.band { padding-block: clamp(72px, 9vw, 128px); }
+.navy { background: var(--navy); color: var(--on-navy); }
+.ivory { background: var(--ivory); color: var(--ink); }
+.stack { display: flex; flex-direction: column; }
+
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; line-height: 1.4; }
+.navy .eyebrow { color: var(--gold); }
+.ivory .eyebrow { color: var(--gold-ink); }
+.h2 { font-size: clamp(42px, 5vw, 66px); line-height: 1.02; }
+.navy .h2 { color: var(--on-navy-strong); }
+.ivory .h2 { color: var(--ink); }
+.h2-sm { font-size: clamp(38px, 4vw, 52px); line-height: 1.05; color: var(--on-navy-strong); }
+.hl-gold { color: var(--gold); }
+.hl-ink { color: var(--gold-ink); font-weight: 600; }
+
+/* Header */
+.site-header { background: var(--navy); border-bottom: 1px solid var(--gold-faint); z-index: 5; }
+@media (min-width: 720px) {
+  .site-header { position: sticky; top: env(safe-area-inset-top, 0px); }
+  [id] { scroll-margin-top: 84px; }
+}
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 32px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-height: 48px; }
+.brand img { width: 46px; height: 46px; object-fit: contain; }
+.brand-name { display: block; font-family: var(--font-display); font-size: 23px; font-weight: 700; letter-spacing: 0.04em; line-height: 1.15; color: var(--gold); }
+.brand-sub { display: block; font-size: 12px; letter-spacing: 0.02em; line-height: 1.3; color: var(--on-navy-muted); }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0 26px; font-size: 15px; }
+.site-nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+
+/* Hero */
+.hero { padding-block: clamp(64px, 9vw, 120px) clamp(72px, 9vw, 128px); }
+.hero-grid { display: flex; flex-wrap: wrap; align-items: center; gap: 56px; }
+.hero-copy { flex: 999 1 520px; min-width: 0; gap: 28px; }
+.hero h1 { font-size: clamp(52px, 7vw, 100px); line-height: 0.98; letter-spacing: -0.01em; color: var(--on-navy-strong); }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
+.lede { max-width: 34em; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.6; color: var(--on-navy-body); }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn { display: inline-flex; align-items: center; min-height: 50px; padding: 0 28px; font-size: 16px; font-weight: 600; letter-spacing: 0.03em; text-decoration: none; border-radius: 2px; border: 1px solid var(--gold); }
+.btn-solid { background: var(--gold); color: var(--navy-deep); }
+.btn-solid:hover { background: var(--on-navy-strong); border-color: var(--on-navy-strong); color: var(--navy-deep); }
+.btn-line { color: var(--gold); }
+.btn-line:hover { background: var(--gold-wash); }
+.medallion-col { flex: 1 1 320px; display: flex; justify-content: center; }
+.medallion { width: min(380px, 100%); max-width: 100%; aspect-ratio: 1 / 1; border-radius: 50%; border: 1px solid var(--gold-line); padding: 16px; }
+.medallion-inner { width: 100%; height: 100%; border-radius: 50%; border: 1px solid rgba(255, 189, 61, 0.8); background: var(--navy-raised); display: flex; align-items: center; justify-content: center; }
+.medallion-inner img { width: 64%; height: auto; }
+.facts { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--gold-faint); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 24px 32px; }
+.facts div { display: flex; flex-direction: column; gap: 6px; }
+.facts dt { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--on-navy-muted); }
+.facts dd { font-family: var(--font-display); font-size: 27px; font-weight: 600; line-height: 1.2; color: var(--on-navy-strong); }
+
+/* Who we are */
+.split { display: flex; flex-wrap: wrap; align-items: center; gap: 56px 64px; }
+.split > .stack { flex: 1 1 460px; min-width: 0; gap: 24px; }
+.split > figure { flex: 1 1 480px; min-width: 0; }
+.prose-ivory { font-size: 18px; line-height: 1.7; color: var(--ink-body); max-width: 38em; }
+.frame { border: 1px solid var(--gold-frame); padding: 12px; }
+.frame img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+
+/* Ambition, vision, mission */
+.ambition { max-width: 940px; margin-inline: auto; align-items: center; gap: 20px; text-align: center; }
+.ambition-quote { font-family: var(--font-display); font-size: clamp(30px, 3.6vw, 48px); font-style: italic; font-weight: 500; line-height: 1.22; color: var(--on-navy-strong); text-wrap: balance; }
+.ambition-quote span { color: var(--gold); font-weight: 600; }
+.vm { margin-top: clamp(56px, 7vw, 88px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: 48px 64px; }
+.vm article { gap: 18px; padding-top: 28px; border-top: 1px solid var(--gold-line); }
+.vm h3 { font-size: 38px; line-height: 1.1; color: var(--gold); }
+.vm p, .vm ul { font-size: 20px; line-height: 1.6; color: #E4E1D8; }
+.ticks { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.ticks li { display: flex; gap: 14px; }
+.ticks li > span:first-child { color: var(--gold); }
+
+/* Core values */
+.values { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 0 48px; }
+.value { gap: 12px; padding-block: 32px; border-top: 1px solid #CDBE9C; }
+.value-letter { font-family: var(--font-display); font-size: 120px; font-weight: 700; line-height: 0.9; color: var(--gold-ink); }
+.value h3 { font-size: 34px; line-height: 1.1; color: var(--ink); }
+.value p { font-size: 17px; line-height: 1.6; color: var(--ink-soft); }
+
+/* Chapter openers */
+.chapter { background: var(--navy-deep); border-block: 1px solid var(--gold-faint); padding-block: clamp(64px, 8vw, 104px) clamp(48px, 6vw, 72px); }
+.chapter .wrap { gap: 20px; }
+.chapter h2 { font-size: clamp(54px, 7vw, 96px); line-height: 1; letter-spacing: -0.01em; color: var(--on-navy-strong); }
+.chapter h2 em { font-style: italic; font-weight: 500; color: var(--gold); }
+.subnav { display: flex; flex-wrap: wrap; gap: 0 28px; font-size: 16px; color: var(--on-navy-body); }
+.subnav a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* Journey */
+.section-head { gap: 12px; }
+.visits { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 28px; }
+.visits figure { display: flex; flex-direction: column; gap: 14px; }
+.visits img, .training img { width: 100%; object-fit: cover; border: 1px solid var(--gold-line); }
+.visits img { aspect-ratio: 4 / 3; }
+.visits figcaption { font-family: var(--font-display); font-size: 27px; font-weight: 600; line-height: 1.1; color: var(--gold); }
+.divided { padding-top: clamp(56px, 7vw, 96px); border-top: 1px solid var(--gold-faint); }
+.training { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 48px 40px; }
+.training article { gap: 18px; }
+.training img { aspect-ratio: 3 / 2; }
+.training h4 { font-size: clamp(30px, 3vw, 38px); line-height: 1.12; color: var(--on-navy-strong); }
+.training h4 em { font-style: italic; color: var(--gold); }
+.training p { font-size: 17px; color: var(--on-navy-body); }
+
+.events { gap: 72px; }
+.event { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px 64px; padding-top: 48px; border-top: 1px solid var(--ivory-rule); }
+.event.rev { flex-direction: row-reverse; }
+.event-text { flex: 1 1 440px; min-width: 0; gap: 18px; }
+.event-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
+.event-sem { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+.event-type { font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-muted); }
+.event h4 { font-size: clamp(38px, 4vw, 54px); line-height: 1.04; color: var(--ink); }
+.event h4 span { font-style: italic; font-weight: 500; color: var(--gold-ink); }
+.event-text p, .event-text ul { font-size: 17px; line-height: 1.7; color: var(--ink-body); }
+.event-text strong { font-weight: 600; color: var(--ink); }
+.event-lead { font-family: var(--font-display); font-size: 25px !important; font-style: italic; font-weight: 500; line-height: 1.35 !important; color: var(--ink) !important; }
+.event .ticks li > span:first-child { color: var(--gold-ink); }
+.stage { gap: 8px; padding-top: 18px; border-top: 1px solid var(--ivory-rule); }
+.stage .eyebrow { font-size: 13px; letter-spacing: 0.2em; }
+.media { flex: 1 1 440px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.media.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.media img { width: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+.media .wide { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.media .wide.photo32 { aspect-ratio: 3 / 2; }
+.media .wide.banner { aspect-ratio: 851 / 315; }
+.media.three img:not(.wide) { aspect-ratio: 1 / 1; }
+
+/* Board */
+.org { max-width: 1100px; margin-inline: auto; display: flex; flex-direction: column; align-items: center; }
+.org-box { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; border: 1px solid var(--gold); }
+.org-box .role { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.org-box .who { font-family: var(--font-display); font-weight: 600; line-height: 1.15; color: var(--on-navy-strong); }
+.org-top { min-width: min(300px, 100%); padding: 18px 36px; background: var(--gold-wash); }
+.org-top .who { font-size: 30px; }
+.org-mid { min-width: min(280px, 100%); padding: 16px 32px; }
+.org-mid .who { font-size: 27px; }
+.vline { width: 1px; height: 40px; background: var(--gold); }
+.org-row { width: 100%; }
+.hline { height: 1px; margin-inline: 10%; background: var(--gold); }
+@media (max-width: 600px) { .hline { display: none; } }
+.org-execs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 0 16px; list-style: none; padding: 0; margin: 0; }
+.org-execs li { display: flex; flex-direction: column; align-items: center; }
+.org-execs .vline { height: 28px; }
+.org-execs .org-box { width: 100%; padding: 14px 10px; border-color: rgba(255, 189, 61, 0.55); }
+.org-execs .role { font-size: 11px; letter-spacing: 0.18em; }
+.org-execs .who { font-size: 21px; line-height: 1.2; }
+
+.leaders { gap: 28px; }
+.leader { display: flex; flex-wrap: wrap; align-items: center; gap: 28px 48px; padding: clamp(20px, 3vw, 36px); background: var(--navy-raised); border: 1px solid var(--gold-faint); }
+.arch { overflow: hidden; background: var(--navy-panel); border-radius: 999px 999px 0 0; border-bottom: 2px solid var(--gold); }
+.arch img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; }
+.leader .arch { flex: none; width: 260px; max-width: 100%; height: 340px; }
+.leader-text { flex: 1 1 360px; min-width: 0; gap: 14px; }
+.role-line { font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.leader h4 { font-size: clamp(34px, 3.4vw, 44px); line-height: 1.08; color: var(--on-navy-strong); }
+.leader-quote { font-family: var(--font-display); font-size: clamp(20px, 1.8vw, 23px); font-style: italic; font-weight: 500; line-height: 1.45; color: #E4E1D8; max-width: 44em; }
+.execs { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; }
+.exec { flex: 1 1 320px; max-width: 381px; min-width: 0; background: var(--navy-raised); border: 1px solid var(--gold-faint); }
+.exec .arch { height: 320px; margin: 24px 24px 0; }
+.exec-body { padding: 24px; gap: 12px; }
+.exec .role-line { font-size: 12px; letter-spacing: 0.18em; }
+.exec h4 { font-size: 31px; line-height: 1.1; color: var(--on-navy-strong); }
+.exec p.quote { font-size: 16px; line-height: 1.65; color: var(--on-navy-body); }
+.exec p.quote strong { font-weight: 600; color: var(--on-navy-strong); }
+
+/* Contact */
+.contact { background-color: var(--navy-deep); background-image: linear-gradient(rgba(26, 32, 64, 0.9), rgba(26, 32, 64, 0.95)), url(img/contact-bg.jpg); background-size: cover; background-position: center; color: var(--on-navy); padding-block: clamp(72px, 9vw, 120px) 40px; }
+.contact .wrap { gap: 48px; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 32px; }
+.contact-grid > div { display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 1px solid var(--gold-line); min-width: 0; }
+.contact-grid dt { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.contact-grid dd { font-size: 18px; line-height: 1.55; overflow-wrap: anywhere; }
+.contact-line { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.copy { font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); background: transparent; border: 1px solid var(--gold-line); border-radius: 2px; min-height: 36px; padding: 0 12px; cursor: pointer; }
+.copy:hover { background: var(--gold-wash); }
+.foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-top: 24px; border-top: 1px solid var(--gold-faint); font-size: 14px; color: var(--on-navy-muted); }
+.foot-brand { display: flex; align-items: center; gap: 12px; }
+.foot-brand img { width: 32px; height: 32px; object-fit: contain; }
+.foot-slogan { font-family: var(--font-display); font-size: 20px; font-style: italic; color: var(--gold); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="img/iec-logo.png" alt="">
+      <span>
+        <span class="brand-name">IEC Hanoi</span>
+        <span class="brand-sub">RMIT Innovation &amp; Entrepreneurship Club</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Booklet chapters">
+      <a href="#introduction">Introduction</a>
+      <a href="#journey">Our Journey</a>
+      <a href="#board">Executive Board</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="navy hero" aria-label="Welcome">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="stack hero-copy">
+        <p class="eyebrow">RMIT Innovation &amp; Entrepreneurship Club Hanoi · Booklet</p>
+        <h1>Be the change.<br><em>Make the change.</em></h1>
+        <p class="lede">A vibrant and inspirational environment for young spirits with a heart for innovation and entrepreneurship.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="#journey">Explore our journey</a>
+          <a class="btn btn-line" href="#board">Meet the board</a>
+        </div>
+      </div>
+      <div class="medallion-col">
+        <div class="medallion">
+          <div class="medallion-inner">
+            <img src="img/iec-logo.png" alt="IEC logo: a unicorn head encircled by the words Innovation &amp; Entrepreneur Club">
+          </div>
+        </div>
+      </div>
+    </div>
+    <dl class="facts">
+      <div><dt>Founded</dt><dd>13 June 2023</dd></div>
+      <div><dt>Current board</dt><dd>Generation 4</dd></div>
+      <div><dt>Ambition</dt><dd>At least 1 unicorn startup</dd></div>
+      <div><dt>Based at</dt><dd>521 Kim Ma, Hanoi</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="introduction" class="ivory band" aria-labelledby="who-title">
+  <div class="wrap">
+    <div class="split">
+      <div class="stack">
+        <p class="eyebrow">01 — Introduction</p>
+        <h2 id="who-title" class="h2">Who we are</h2>
+        <p class="prose-ivory">Established on June 13th, 2023, the <span class="hl-ink">RMIT Innovation and Entrepreneurship Club Hanoi</span> fosters a vibrant and inspirational environment for young spirits with a heart for <span class="hl-ink">innovation</span> and <span class="hl-ink">entrepreneurship</span>.</p>
+        <p class="prose-ivory">We have made significant strides in promoting innovation and entrepreneurship within the RMIT and Hanoi student communities through impactful and diverse events. Our destined path is to <span class="hl-ink">empower</span> RMIT students to become <span class="hl-ink">innovative leaders</span>, equipped with the <span class="hl-ink">tools</span>, <span class="hl-ink">knowledge</span>, and <span class="hl-ink">opportunities</span> to realize their full potential, transform their business ideas into reality, and to <span class="hl-ink">create positive change</span>.</p>
+      </div>
+      <figure>
+        <div class="frame"><img src="img/who-we-are.jpg" alt="IEC members gathered with the club flag" loading="lazy"></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="navy band" aria-labelledby="ambition-label">
+  <div class="wrap">
+    <div class="stack ambition">
+      <p id="ambition-label" class="eyebrow">Ambition</p>
+      <p class="ambition-quote">Achieving at least <span>1 unicorn startup</span> founded by students coming from Innovation &amp; Entrepreneurship Club.</p>
+    </div>
+    <div class="vm">
+      <article class="stack">
+        <h3>Vision</h3>
+        <p>To <span class="hl-gold">empower</span> RMIT students to become <span class="hl-gold">innovative and entrepreneurial leaders</span>, <span class="hl-gold">inspiring</span> them to <span class="hl-gold">create positive change</span> in their communities and beyond.</p>
+      </article>
+      <article class="stack">
+        <h3>Mission</h3>
+        <p>To provide <span class="hl-gold">real start-up experience</span> to RMIT students</p>
+        <ul class="ticks">
+          <li><span aria-hidden="true">›</span><span>fostering their <span class="hl-gold">entrepreneurial spirit</span></span></li>
+          <li><span aria-hidden="true">›</span><span>cultivating a <span class="hl-gold">vibrant community</span> of innovators dedicated to driving <span class="hl-gold">positive societal impact</span>.</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="ivory band" aria-labelledby="values-title">
+  <div class="wrap stack" style="gap: 56px">
+    <div class="stack" style="gap: 16px">
+      <p class="eyebrow">I · E · C</p>
+      <h2 id="values-title" class="h2">Core values</h2>
+    </div>
+    <div class="values">
+      <article class="stack value">
+        <span class="value-letter" aria-hidden="true">I</span>
+        <h3>Innovation</h3>
+        <p>How we challenge limits and think outside the box.</p>
+      </article>
+      <article class="stack value">
+        <span class="value-letter" aria-hidden="true">E</span>
+        <h3>Empowerment</h3>
+        <p>A launchpad where every voice is heard and every member is equipped to lead.</p>
+      </article>
+      <article class="stack value">
+        <span class="value-letter" aria-hidden="true">C</span>
+        <h3>Can-do Mindset</h3>
+        <p>Turning obstacles into opportunities.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="journey" class="chapter" aria-labelledby="journey-title">
+  <div class="wrap stack">
+    <p class="eyebrow" style="color: var(--gold)">02 — Our Journey</p>
+    <h2 id="journey-title">Our Journey</h2>
+    <nav class="subnav" aria-label="Our Journey sections">
+      <a href="#company-visits">Company visits</a>
+      <a href="#training">Training sessions</a>
+      <a href="#events">Events</a>
+    </nav>
+  </div>
+</section>
+
+<section id="company-visits" class="navy" style="padding-block: clamp(64px, 8vw, 112px) clamp(56px, 7vw, 96px)" aria-labelledby="visits-title">
+  <div class="wrap stack" style="gap: 40px">
+    <div class="stack section-head">
+      <p class="eyebrow">Internal</p>
+      <h3 id="visits-title" class="h2-sm">Company visits</h3>
+    </div>
+    <div class="visits">
+      <figure><img src="img/visit-vinfast.jpg" alt="IEC members with the club flag at the VinFast gate" loading="lazy"><figcaption>VinFast</figcaption></figure>
+      <figure><img src="img/visit-tht.jpg" alt="IEC members with the club flag during the THT Vietnam visit" loading="lazy"><figcaption>THT Vietnam</figcaption></figure>
+      <figure><img src="img/visit-appota.jpg" alt="IEC members under the RMIT-ers to Appota welcome screen" loading="lazy"><figcaption>Appota Vietnam</figcaption></figure>
+      <figure><img src="img/visit-seongon.jpg" alt="IEC members with the SEONGON team at their office" loading="lazy"><figcaption>SEONGON</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="training" class="navy" style="padding-block: 0 clamp(72px, 9vw, 128px)" aria-labelledby="training-title">
+  <div class="wrap">
+    <div class="stack divided" style="gap: 40px">
+      <div class="stack section-head">
+        <p class="eyebrow">Internal</p>
+        <h3 id="training-title" class="h2-sm">Training sessions</h3>
+      </div>
+      <div class="training">
+        <article class="stack">
+          <img src="img/training-first-job.jpg" alt="Students listening to a presentation at the How to get your first job? session" loading="lazy">
+          <h4>How to get your <em>first job?</em></h4>
+          <p>CV revision, job application process, what to expect on the job, …</p>
+        </article>
+        <article class="stack">
+          <img src="img/training-assignments.jpg" alt="A speaker presenting at the RMIT Assignments – a survival guide session" loading="lazy">
+          <h4>RMIT Assignments — <em>a survival guide</em></h4>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="events" class="ivory band" aria-labelledby="events-title">
+  <div class="wrap stack events">
+    <div class="stack" style="gap: 16px">
+      <p class="eyebrow">2025 — 2026</p>
+      <h3 id="events-title" class="h2">Events</h3>
+    </div>
+
+    <article class="event">
+      <div class="stack event-text">
+        <p class="event-meta"><span class="event-sem">Sem 1 · 2025</span><span class="event-type">Interactive Exhibition &amp; Talkshow</span></p>
+        <h4>From Chaos to Crown</h4>
+        <p>“From Chaos to Crown” is a culmination of our most successful past events, thoughtfully woven into a one-day experience that blends engagement, insight, and creativity. The morning features an interactive showcase complete with hands-on crafting workshops and dynamic minigames, fostering collaboration and exploration. In the afternoon, we shift gears with a thought-provoking talk show and pitch session.</p>
+        <p>Through the academic and real-world insights of our guest speakers, we explore the Three Stages of Communication Crisis model: pre-crisis, crisis response, and post-crisis recovery — brought to life through personal stories, professional experiences, and actionable strategies.</p>
+      </div>
+      <div class="media three">
+        <img class="wide" src="img/chaos-1.jpg" alt="Participants and guests in front of the From Chaos to Crown backdrop" loading="lazy">
+        <img src="img/chaos-2.jpg" alt="Guest speakers on stage during the talk show" loading="lazy">
+        <img src="img/chaos-3.jpg" alt="A visitor at the hands-on crafting pegboard" loading="lazy">
+        <img src="img/chaos-4.jpg" alt="Students working at tables during the showcase" loading="lazy">
+      </div>
+    </article>
+
+    <article class="event rev">
+      <div class="stack event-text">
+        <p class="event-meta"><span class="event-sem">Sem 2 · 2025</span><span class="event-type">LinkedIn Workshop</span></p>
+        <h4>LinkedIn – LockedIn</h4>
+        <p>“LinkedIn, LockedIn” was a dynamic professional development event designed to empower students to elevate their LinkedIn profiles and networking confidence through a hands-on, one-day experience. The morning began with an insightful talk show, where guest speakers Mr. Cuong Dang and Ms. Hang Pham shared practical strategies on personal branding, professional outreach, and building meaningful connections on LinkedIn.</p>
+        <p>In the afternoon, participants engaged in an interactive workshop, applying what they learned to refine their own profiles — from crafting compelling headlines to articulating impactful experience descriptions.</p>
+        <p>By combining expert insights, practical learning, and creative engagement, LinkedIn, LockedIn embodied the mission of the RMIT Innovation &amp; Entrepreneurship Club: to bridge the gap between academic learning and real-world professional growth.</p>
+      </div>
+      <div class="media">
+        <img class="wide" src="img/linkedin-1.jpg" alt="Speakers and participants of LinkedIn – LockedIn holding flowers" loading="lazy">
+        <img class="wide" src="img/linkedin-2.jpg" alt="Participants seated during the LinkedIn workshop" loading="lazy">
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="stack event-text">
+        <p class="event-meta"><span class="event-sem">Sem 3 · 2025</span><span class="event-type">Interactive Gameplay</span></p>
+        <h4>Innoventure</h4>
+        <p class="event-lead">Startup ideas aren’t rare. What’s rare is knowing how to move forward when nothing feels certain yet.</p>
+        <p>When you’re building something new, clarity doesn’t arrive first. You move with limited time, limited resources, and incomplete information. Every decision opens one path and quietly closes another. Sooner or later, every team stands at the same crossroads:</p>
+        <ul class="ticks">
+          <li><span aria-hidden="true">›</span><span><strong>PLAY SAFE:</strong> Move carefully. Reduce risk. Stay within what feels familiar.</span></li>
+          <li><span aria-hidden="true">›</span><span><strong>ALL-IN:</strong> Commit early. Push fast. Accept that mistakes will cost you.</span></li>
+        </ul>
+        <p>The question remains: <strong>ALL-IN or PLAY SAFE?</strong> Discover your entrepreneurial style at <strong>Innoventure</strong>!</p>
+      </div>
+      <div class="media">
+        <img class="wide banner" src="img/innoventure-banner.jpg" alt="Innoventure board game artwork" loading="lazy">
+        <img src="img/innoventure-1.jpg" alt="Players placing game cards on the Innoventure table" loading="lazy">
+        <img src="img/innoventure-2.jpg" alt="Hands arranging game pieces during Innoventure" loading="lazy">
+      </div>
+    </article>
+
+    <article class="event rev">
+      <div class="stack event-text">
+        <p class="event-meta"><span class="event-sem">Sem 1 · 2026</span><span class="event-type">Charity Event</span></p>
+        <h4>Joyful Delivery</h4>
+        <p>The “Joyful Delivery” initiative by IEC is a meaningful community project designed to spread happiness and connect deeply with the children at the Sao Mai Center. Built on the core belief that charity does not have to be something heavy and can simply start with a smile, the event focuses on transforming small, genuine moments into impactful experiences. By engaging participants in a shared journey of giving, the project bridges the gap between community action and heartfelt compassion.</p>
+        <div class="stack stage">
+          <p class="eyebrow">Create</p>
+          <p>In the initial “CREATE” stage, participants visit interactive workshops featuring minigames to generate positive energy. This phase raises essential funds while allowing players to empathize with the children and write warm, handwritten notes.</p>
+        </div>
+        <div class="stack stage">
+          <p class="eyebrow">Deliver</p>
+          <p>The initiative culminates in the “DELIVER” stage, where IEC brings the raised funds and positive energy directly to the Sao Mai Center. During a recent visit, the team distributed gifts and spent quality time drawing, talking, and playing with the kids. These simple activities quickly blossomed into deep, real connections through shared laughter and colors.</p>
+        </div>
+      </div>
+      <div class="media">
+        <img class="wide" src="img/joyful-1.jpg" alt="The Joyful Delivery team with the IEC flag" loading="lazy">
+        <img class="wide" src="img/joyful-2.jpg" alt="Participants at the Joyful Delivery workshop booth" loading="lazy">
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="stack event-text">
+        <p class="event-meta"><span class="event-sem">Sem 1 · 2026</span><span class="event-type">Interactive Exhibition</span></p>
+        <h4>Giao <span>— IEC × Trang Bùi</span></h4>
+        <p>The “Giao” Exhibit is an interactive, multi-phase exhibition co-created through a strategic partnership between the RMIT Innovation &amp; Entrepreneurship Hanoi (IEC) and the Vietnamese-inspired design brand TRANG BÙI. Modeled around the formal Entrepreneurial Process Model, this collaboration aims to translate a real-world fashion case study into a structured academic journey, guiding visitors step-by-step through the lifecycle of a modern startup.</p>
+        <p>Ultimately, “Giao” — signifying the intersection of tradition and modernity — delivers the message that cultural heritage is a dynamic catalyst for innovation rather than a relic of the past. By transforming restrictive traditional attire into functional, unisex everyday wear, the exhibit proves that honoring one’s roots is fully compatible with contemporary utility, inspiring future entrepreneurs to leverage cultural identity as a powerful foundation for sustainable business.</p>
+      </div>
+      <div class="media">
+        <img class="wide photo32" src="img/giao-1.jpg" alt="The IEC and Trang Bùi team in front of the Giao exhibition garments" loading="lazy">
+        <img src="img/giao-2.jpg" alt="A visitor viewing garments on display at Giao" loading="lazy">
+        <img src="img/giao-3.jpg" alt="Visitors sketching at a Giao workshop table" loading="lazy">
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="board" class="chapter" aria-labelledby="board-title">
+  <div class="wrap stack">
+    <p class="eyebrow" style="color: var(--gold)">03 — Executive Board</p>
+    <h2 id="board-title">IEC Gen 4 <em>Executive Board</em></h2>
+    <nav class="subnav" aria-label="Executive Board sections">
+      <a href="#structure">Board structure</a>
+      <a href="#executives">Executives introduction</a>
+    </nav>
+  </div>
+</section>
+
+<section id="structure" class="navy" style="padding-block: clamp(64px, 8vw, 112px) clamp(64px, 8vw, 96px)" aria-label="Board structure">
+  <div class="wrap">
+    <div class="org">
+      <div class="org-box org-top"><span class="role">President</span><span class="who">Đỗ Thị Thy Hoàng</span></div>
+      <div class="vline" aria-hidden="true"></div>
+      <div class="org-box org-mid"><span class="role">Vice-President</span><span class="who">Hoàng Minh Anh</span></div>
+      <div class="vline" aria-hidden="true"></div>
+      <div class="org-row">
+        <div class="hline" aria-hidden="true"></div>
+        <ul class="org-execs">
+          <li><div class="vline" aria-hidden="true"></div><div class="org-box"><span class="role">R&amp;D Executive</span><span class="who">Đỗ Doãn Hoàng Nguyên</span></div></li>
+          <li><div class="vline" aria-hidden="true"></div><div class="org-box"><span class="role">Media Executive</span><span class="who">Đặng An Phương</span></div></li>
+          <li><div class="vline" aria-hidden="true"></div><div class="org-box"><span class="role">EA Executive</span><span class="who">Trần Tú Nhi</span></div></li>
+          <li><div class="vline" aria-hidden="true"></div><div class="org-box"><span class="role">HR Executive</span><span class="who">Vũ Quỳnh Chi</span></div></li>
+          <li><div class="vline" aria-hidden="true"></div><div class="org-box"><span class="role">FinLog Executive</span><span class="who">Phạm Ý Ly</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="executives" class="navy" style="padding-block: 0 clamp(72px, 9vw, 128px)" aria-labelledby="execs-title">
+  <div class="wrap">
+    <div class="stack divided" style="gap: 48px">
+      <div class="stack section-head">
+        <p class="eyebrow">Executives introduction</p>
+        <h3 id="execs-title" class="h2-sm" style="font-size: clamp(40px, 4.6vw, 58px)">In their own words</h3>
+      </div>
+
+      <div class="stack leaders">
+        <article class="leader">
+          <div class="arch"><img src="img/portrait-thy-hoang.webp" alt="Portrait of Đỗ Thị Thy Hoàng" loading="lazy"></div>
+          <div class="stack leader-text">
+            <p class="role-line">President of IEC Gen 4</p>
+            <h4>Đỗ Thị Thy Hoàng</h4>
+          </div>
+        </article>
+        <article class="leader">
+          <div class="arch"><img src="img/portrait-minh-anh.webp" alt="Portrait of Hoàng Minh Anh" loading="lazy"></div>
+          <div class="stack leader-text">
+            <p class="role-line">Vice President of IEC Gen 4</p>
+            <h4>Hoàng Minh Anh</h4>
+            <p class="leader-quote">“As the new President of RMIT Innovation and Entrepreneurship Club, I am honored to welcome you to a new chapter of IEC. Here, Innovation is how we challenge limits and think outside the box. We thrive on Empowerment, creating a launchpad where every voice is heard and every member is equipped to lead. Most importantly, our Can-Do Mindset drives us to turn obstacles into opportunities. No matter how small the first step, we don’t just dream about the future; we build it. Welcome to IEC, where your potential meets boundless possibilities!”</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="execs">
+        <article class="stack exec">
+          <div class="arch"><img src="img/portrait-hoang-nguyen.webp" alt="Portrait of Đỗ Doãn Hoàng Nguyên" loading="lazy"></div>
+          <div class="stack exec-body">
+            <p class="role-line">Research &amp; Development Executive</p>
+            <h4>Đỗ Doãn Hoàng Nguyên</h4>
+            <p class="quote">“As an Executive of the R&amp;D department, I serve as the brain of the IEC Club, researching trends, proposing creative ideas and working with the team to build proposals and outlines as well as coordinate with other departments to finalize event plans, ensure effective implementation. In addition, I promote personal growth, creativity and connection between each and every members to <strong>help you achieve your full potential</strong>. Understanding my board’s crucial role in the club’s processes, I’ll give my all to achieve our vision: Development and Entrepreneurship.”</p>
+          </div>
+        </article>
+        <article class="stack exec">
+          <div class="arch"><img src="img/portrait-an-phuong.webp" alt="Portrait of Đặng An Phương" loading="lazy"></div>
+          <div class="stack exec-body">
+            <p class="role-line">Media Executive</p>
+            <h4>Đặng An Phương</h4>
+            <p class="quote">“As a Media Executive, I aim to build and maintain a long-lasting, meaningful identity for us through impactful content and visuals. Balancing creativity with a strategic, entrepreneurial approach, I would analyze our marketing efforts to keep IEC’s innovative mindset ahead of the curve. Most importantly, beyond aesthetics, my ultimate goal is to nurture a deeply supportive community. I want to ensure that every member has each other’s back in the present, and that everyone will look back on with immense pride and fond memories in the future.”</p>
+          </div>
+        </article>
+        <article class="stack exec">
+          <div class="arch"><img src="img/portrait-tu-nhi.webp" alt="Portrait of Trần Tú Nhi" loading="lazy"></div>
+          <div class="stack exec-body">
+            <p class="role-line">External Affairs Executive</p>
+            <h4>Trần Tú Nhi</h4>
+            <p class="quote">“As an Executive of the External Affairs department, I strive to help members be proactive and professional, ensuring IEC builds trust and strong connections through effective communication. We support, motivate, and inspire each other, fostering growth in work and personal development in a friendly, tight-knit environment — more than just a team, but a family.”</p>
+          </div>
+        </article>
+        <article class="stack exec">
+          <div class="arch"><img src="img/portrait-quynh-chi.webp" alt="Portrait of Vũ Quỳnh Chi" loading="lazy"></div>
+          <div class="stack exec-body">
+            <p class="role-line">Human Resource Management Executive</p>
+            <h4>Vũ Quỳnh Chi</h4>
+            <p class="quote">“As an HR Executive, I hope to build a supportive environment where every member feels valued, trusted, and encouraged to grow. I believe that a strong club is built not only through successful events, but also through the people behind them. My goal is to help members enjoy the journey, discover their potential, and leave IEC with meaningful experiences that stay with them beyond university.”</p>
+          </div>
+        </article>
+        <article class="stack exec">
+          <div class="arch"><img src="img/portrait-y-ly.webp" alt="Portrait of Phạm Ý Ly" loading="lazy"></div>
+          <div class="stack exec-body">
+            <p class="role-line">Finance &amp; Logistics Executive</p>
+            <h4>Phạm Ý Ly</h4>
+            <p class="quote">“As Finance Logistics Executive of IEC, I bridge leadership vision with practical execution. I oversee budgeting, source venues and equipment, and manage all assets to ensure smooth, efficient events. I serve as a strong internal support system for the Club, helping shape and guide the committee’s direction while standing firmly as their dependable backbone. For me, this role is about trust, collaboration, and creating meaningful experiences with members to foster a stronger base for IEC.”</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="wrap stack">
+    <div class="stack" style="gap: 16px">
+      <p class="eyebrow" style="color: var(--gold)">Get in touch</p>
+      <h2 id="contact-title" class="h2" style="font-size: clamp(40px, 4.6vw, 58px); color: var(--on-navy-strong)">Contact information</h2>
+    </div>
+    <dl class="contact-grid">
+      <div><dt>Address</dt><dd>521 Kim Ma, Ba Dinh District, Ha Noi, Vietnam</dd></div>
+      <div><dt>Website</dt><dd><a href="https://ieclub-rmit-hn.com" target="_blank" rel="noopener">ieclub-rmit-hn.com</a></dd></div>
+      <div><dt>Hotline</dt><dd class="contact-line"><span><a id="hotline" href="tel:+84705139090">0705139090</a> (Ms. Minh Anh)</span><button type="button" class="copy" id="copy-hotline" data-copy="0705139090" data-target="hotline" aria-label="Copy hotline number">Copy</button></dd></div>
+      <div><dt>Email</dt><dd class="contact-line"><a id="email" href="mailto:ieclub.hn@rmit.edu.vn">ieclub.hn@rmit.edu.vn</a><button type="button" class="copy" id="copy-email" data-copy="ieclub.hn@rmit.edu.vn" data-target="email" aria-label="Copy email address">Copy</button></dd></div>
+    </dl>
+    <div class="foot">
+      <span class="foot-brand"><img src="img/iec-logo.png" alt="">RMIT Innovation &amp; Entrepreneurship Club Hanoi</span>
+      <span class="foot-slogan">Be the change. Make the change.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  function selectText(el) {
+    try {
+      var range = document.createRange();
+      range.selectNodeContents(el);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } catch (e) {}
+  }
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      var target = document.getElementById(btn.getAttribute('data-target'));
+      var done = function (label) {
+        btn.textContent = label;
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done('Copied'); }, function () { selectText(target); done('Selected'); });
+      } else {
+        selectText(target);
+        done('Selected');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
